@@ -19,6 +19,7 @@ def plot_heatmap_midsection(density_grid, concentration_grid, time_step):
 
 def sigmoid(grid, threshold):
     return 1 / (1 + np.exp(-15 * (grid - threshold)))
+
 def plot_3d(density_grid, concentration_grid, time_step):
     x = np.arange(density_grid.shape[0])
     y = np.arange(density_grid.shape[1])
@@ -26,7 +27,7 @@ def plot_3d(density_grid, concentration_grid, time_step):
     
     X, Y, Z = np.meshgrid(x, y, z)
     
-    fig = plt.figure(figsize=(12, 5))
+    fig = plt.figure(figsize=(16, 5))
     
     alpha1 = sigmoid(density_grid.flatten(), 0.5) 
     colors1 = plt.cm.inferno(density_grid.flatten())
@@ -34,6 +35,9 @@ def plot_3d(density_grid, concentration_grid, time_step):
     ax1 = fig.add_subplot(121, projection='3d')
     ax1.set_title(f"Density at time {time_step}")
     ax1.scatter(X.flatten(), Y.flatten(), Z.flatten(), c=colors1, cmap='inferno', vmin=0, vmax=1)
+    ax1.set_xlabel('X-axis')
+    ax1.set_ylabel('Y-axis')
+    ax1.set_zlabel('Z-axis')
     plt.colorbar(ax1.collections[0], ax=ax1, label='Density')
     
 
@@ -45,6 +49,9 @@ def plot_3d(density_grid, concentration_grid, time_step):
     ax2 = fig.add_subplot(122, projection='3d')
     ax2.set_title(f"Concentration at time {time_step}")
     ax2.scatter(X.flatten(), Y.flatten(), Z.flatten(), c=colors2, cmap='inferno', vmin=0, vmax=concentration_grid.max())
+    ax2.set_xlabel('X-axis')
+    ax2.set_ylabel('Y-axis')
+    ax2.set_zlabel('Z-axis')
     plt.colorbar(sm, ax=ax2, label='Concentration')
 
     plt.show()
