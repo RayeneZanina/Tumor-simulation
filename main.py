@@ -6,7 +6,7 @@ from visualization.plots import plot_heatmap_midsection
 from visualization.animation import animate_heatmap_section
 
 params = get_default_parameters()
-time_steps = 300 # 3 hours
+time_steps = 3000 # 30 hours
 
 density_grid, concentration_grid = initialize_grid_3d(lambda : np.random.rand(), params.grid_dims)
 drug_source_grid = drug_source(params.source_concentration, params.source_position, params.grid_dims)

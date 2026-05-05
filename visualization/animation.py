@@ -21,5 +21,5 @@ def animate_heatmap_section(density_grids, concentration_grids, time_steps):
         axes[1].set_title(f"Concentration at time {frame}")
         axes[1].imshow(concentration_grids[frame][:,:,concentration_grids[frame].shape[2] // 2], cmap='inferno')
     
-    ani = animation.FuncAnimation(fig, update, frames=time_steps, repeat=False, interval=100)
+    ani = animation.FuncAnimation(fig, update, frames=time_steps, repeat=False, interval=50)
     plt.show()
