@@ -4,14 +4,14 @@ def laplacian_2d(grid, dx):
     grid_padded = np.pad(grid,1,mode='edge')
     return (grid_padded[2:,1:-1] + grid_padded[:-2,1:-1] +
             grid_padded[1:-1,2:] + grid_padded[1:-1,:-2] -
-            4 * grid) / dx**2
+            4 * grid_padded[1:-1,1:-1]) / dx**2
 
 def laplacian_3d(grid, dx):
     grid_padded = np.pad(grid,1,mode='edge')
     return (grid_padded[2:,1:-1,1:-1] + grid_padded[:-2,1:-1,1:-1] +
             grid_padded[1:-1,2:,1:-1] + grid_padded[1:-1,:-2,1:-1] +
             grid_padded[1:-1,1:-1,2:] + grid_padded[1:-1,1:-1,:-2] -
-            6 * grid) / dx**2
+            6 * grid_padded[1:-1,1:-1,1:-1]) / dx**2
 
 def drug_source(concentration, position, grid_dims):
     source = np.zeros(grid_dims)
