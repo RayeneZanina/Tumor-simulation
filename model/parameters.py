@@ -21,4 +21,5 @@ class Parameters:
         self.blob_std_dev = 5 # mm
 
 def get_default_parameters():
+    np.random.seed(42)
     return Parameters()
