@@ -42,7 +42,6 @@ def plot_3d(density_grid, concentration_grid, time_step):
     ax1.set_zlabel('Z-axis')
     plt.colorbar(sm, ax=ax1, label='Density')
     
-
     sm = plt.cm.ScalarMappable(cmap='inferno', norm=plt.Normalize(vmin=0, vmax=concentration_grid.max()))
     sm.set_array([])
     alpha2 = sigmoid(concentration_grid.flatten()/concentration_grid.max(), 0.5)
