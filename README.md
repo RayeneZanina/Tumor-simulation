@@ -4,7 +4,7 @@ an environment where a drug diffuses.
 This can be used to design different experiments with different parameters to predict the growth of a tumor
 in a tissue with drug diffusion.
 
-<img width="1188" height="437" alt="image" src="https://github.com/user-attachments/assets/6947ee57-246f-473e-94a4-0a8c66a2eb74" />
+<img width="1188" height="437" alt="image" src="https://github.com/user-attachments/assets/d11e7dc1-552f-4042-b068-3e77bf4de473" />
 Animations for the tumor and drug concentration are also generated
 
 This project was pushed even further by adding a drug optimization algorithm. The drug optimization determines the optimal
